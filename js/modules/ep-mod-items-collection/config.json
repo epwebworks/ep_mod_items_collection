@@ -1,5 +1,6 @@
 {
   "ui" : {
     "main" : "#ep-mod-items-collection"
-  }
+  },
+  "items_path" : "js/modules/ep-mod-items-collection/resources/items"
 }
