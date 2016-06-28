@@ -29,16 +29,16 @@ define([
       dictionaries : {}
     },
 
-    setLang, getLang, publicAPI;
+    set, get, publicAPI;
 
   // ----------------------- END MODULES SCOPE VARIABLES --------------------
   
 
   // -------------------------- BEGIN PUBLIC METHODS ------------------------
 
-  // Begin Public method /setLang/
+  // Begin Public method /set/
   //
-  // Example   : language.setLang({ ru : 'js/res/lang_ru.json' }, true )
+  // Example   : language.set({ ru : 'js/res/lang_ru.json' }, true )
   // Purpose   : set language from JSON file with dictionary
   // Arguments :
   //   * lang_map - Obj { lang_code : dict_url }
@@ -47,8 +47,8 @@ define([
   //     true  - make these language and dictionary current
   // Throws    : error on incorrect dictionary url
   // Return    : none
-  setLang = function ( lang, do_set_current ) {
-    var lang_code;
+  set = function ( lang, do_set_current ) {
+    var lang_code, status;
 
     switch ( typeof lang ) {
 
@@ -75,9 +75,9 @@ define([
         break;
     }
   };
-  // End Public method /setLang/
+  // End Public method /set/
 
-  getLang = function ( lang ) {
+  get = function ( lang ) {
     if ( ! lang ) {
       return {
         language   : stateMap.current_lang,
@@ -91,8 +91,8 @@ define([
 
 
   publicAPI = {
-    setLang : setLang,
-    getLang : getLang
+    set : set,
+    get : get
   };
 
   // Return module public API

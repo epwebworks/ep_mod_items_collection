@@ -23,7 +23,8 @@ require.config({
     backbone      : 'libs/backbone/backbone-min',
     text          : 'libs/require/text',
     json          : 'libs/require/json',
-    ep_mod_ic     : 'modules/ep-mod-items-collection'
+    ep_mod_ic     : 'modules/ep-mod-items-collection',
+    language      : 'modules/ep-mod-items-collection/utils/language'
   },
   shim    : {
     'backbone'     : {
