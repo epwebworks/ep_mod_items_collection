@@ -39,7 +39,6 @@ define([
       var img_path = config.items_path;
       img_path +=  '/' + this.get( 'id' );
       img_path += '/img/' + this.get( 'thumb_img' );
-      console.log( img_path );
       this.set( { img_path : img_path } );
     }
   });

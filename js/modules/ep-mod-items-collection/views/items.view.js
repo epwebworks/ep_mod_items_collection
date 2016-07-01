@@ -51,8 +51,14 @@ define([
 
     template : _.template( itemsTemplate ),
 
-    initialize : function ( init_data ) {
-      this.collection = new ItemsCollection( init_data.items.item_list );
+    initialize : function ( initData ) {
+      this.collection = new ItemsCollection( initData.items.item_list );
+      console.log( this.collection.setFieldFilter([
+        { field : 'type', type : 'equalTo', value : 'bath-house' },
+        { field : 'tech', type : 'equalTo', value : [ 'profiled-beam', 'aerated-concrete' ] },
+        { field : 'floors', type : 'equalTo', value : [ 1 ] },
+        { field : 'area', type : 'range', value : [ 30, 90 ] }
+      ]) );
     },
 
     render : function () {
@@ -62,14 +68,14 @@ define([
       this.$el.addClass( 'row' );
       this.$el.html( this.template );
 
-      this.collection.each( function ( item_model ) {
+      this.collection.each( function ( itemModel ) {
         var itemView;
 
         // Set model language to current
-        item_model.set({ _lang :_lang });
+        itemModel.set({ _lang :_lang });
 
         // Create item view
-        itemView = new ItemView({ model : item_model });
+        itemView = new ItemView({ model : itemModel });
 
         // Append item view to containing element
         this.$( configMap.ui.items ).append( itemView.render().el );

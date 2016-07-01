@@ -1,4 +1,11 @@
 {
+  "item_title" : "Проект",
   "main_title" : "Коллекция элементов",
-  "item_title" : "Проект"
+
+  "ac"               : "гб",
+  "aerated-concrete" : "газобетон",
+  "m"                : "м",
+  "pb"               : "пб",
+  "profiled-beam"    : "профилированный брус",
+  "project"          : "проект"
 }

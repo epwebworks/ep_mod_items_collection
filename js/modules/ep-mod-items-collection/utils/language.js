@@ -47,7 +47,7 @@ define([
   //     true  - make these language and dictionary current
   // Throws    : error on incorrect dictionary url
   // Return    : none
-  set = function ( lang, do_set_current ) {
+  set = function ( lang, doSetCurrent ) {
     var lang_code, status;
 
     switch ( typeof lang ) {
@@ -64,7 +64,7 @@ define([
           if ( lang.hasOwnProperty( lang_code ) ) {
             $.getJSON( lang[ lang_code ], function ( dict ) {
               stateMap.dictionaries[ lang_code ] = dict;
-              if ( do_set_current ) {
+              if ( doSetCurrent ) {
                 stateMap.current_lang = lang_code;
                 stateMap.current_dict = dict;
               }

@@ -1,5 +1,19 @@
 <a>
-  <%= _lang.item_title %>
-  <%= title %>
   <img class="img-responsive" src="<%= img_path %>">
+  <h4 class="text-center">
+    <%= _lang.project %>
+    <% title.forEach( function( title_p ) { %>
+    <%- _lang[ title_p ] || title_p %>
+    <% } ) %>
+  </h4>
+  <div class="text-center"><%= area %> <%= _lang.m %><sup>2</sup></div>
+  <div class="text-center">
+    <% var len = tech.length %>
+    <% tech.forEach( function( tech_type, index ) { %>
+    <%= _lang[ tech_type ] %>
+    <% if ( len > 1 && index < len - 1 ) { %>
+    <%- ',' %>
+    <% } %>
+    <% } ) %>
+  </div>
 </a>

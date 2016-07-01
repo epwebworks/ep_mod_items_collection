@@ -101,27 +101,27 @@ define([
     //
     // Purpose   : toggle current language
     // Arguments :
-    //   * lang_code - {String} two latin letters
-    //   * lang_path - {String} JSON language relative path
-    //   * do_set_current - {Boolean} if true make language current
+    //   * langCode - {String} two latin letters
+    //   * langPath - {String} JSON language relative path
+    //   * doSetCurrent - {Boolean} if true make language current
     // Throws    : none
     // Return    : none
-    setLang : function ( lang_code, lang_path, do_set_current ) {
+    setLang : function ( langCode, langPath, doSetCurrent ) {
       var
         $buttons,
         self     = this,
         lang_map = {};
 
-      lang_map[ lang_code ] = lang_path;
+      lang_map[ langCode ] = langPath;
 
       $( language ).one( 'load', () => {
         self.render( self.getTemplateData() );
         $buttons = self.$( configMap.ui.lang + ' button' );
         $buttons.removeClass( 'active' );
-        $buttons.filter( '[href="#' + lang_code + '"]' ).addClass( 'active' );
+        $buttons.filter( '[href="#' + langCode + '"]' ).addClass( 'active' );
       } );
 
-      language.set( lang_map, do_set_current );
+      language.set( lang_map, doSetCurrent );
     },
     // End View method /setLang/
 

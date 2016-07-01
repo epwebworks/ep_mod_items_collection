@@ -1,4 +1,10 @@
 {
   "main_title" : "Items collection",
-  "item_title" : "Project"
+
+  "ac"               : "ac",
+  "aerated-concrete" : "aerated concrete",
+  "m"                : "m",
+  "pb"               : "pb",
+  "profiled-beam"    : "profiled beam",
+  "project"          : "project"
 }
